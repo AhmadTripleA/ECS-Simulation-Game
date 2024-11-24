@@ -1,13 +1,16 @@
-﻿using Godot;
+using Godot;
 using Common;
 
 public class SlaveComponent : ComponentECS
 {
     public float Health = 100.0f;
-    public float Speed = 5.0f;
+    public float MovementSpeed = 10.0f;
     public float MiningSpeed = 5.0f;
-    public Inventory inventory = new Inventory();
-    public int CurrentAmount = 0;
+    public float ChoppingSpeed = 12.5f;
+    
+    public IMineable MineableTarget;
+    public Vector2 MovementTarget;
+    public Inventory inventory = new();
 
     public SlaveComponent()
     {

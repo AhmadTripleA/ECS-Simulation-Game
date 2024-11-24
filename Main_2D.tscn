@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4rhxw6tkjig7"]
+[gd_scene load_steps=8 format=3 uid="uid://b4rhxw6tkjig7"]
 
-[ext_resource type="Texture2D" uid="uid://cmysfnvgkhsbp" path="res://Sprites/tree.png" id="1_hvnq3"]
-[ext_resource type="Texture2D" uid="uid://cl0qpomdjnp2l" path="res://Sprites/house.png" id="2_v5vcg"]
+[ext_resource type="Texture2D" uid="uid://cmysfnvgkhsbp" path="res://Media/Sprites/tree.png" id="1_hvnq3"]
+[ext_resource type="Texture2D" uid="uid://cl0qpomdjnp2l" path="res://Media/Sprites/house.png" id="2_v5vcg"]
 [ext_resource type="Script" path="res://Scripts/Lumperjack.cs" id="3_2wd3k"]
 [ext_resource type="Texture2D" uid="uid://0u3u5ug327ic" path="res://icon.svg" id="3_gfe5d"]
+[ext_resource type="Script" path="res://Scripts/Slave/SlaveComponent.cs" id="5_1nfvo"]
 [ext_resource type="Script" path="res://Scripts/Trees/TreeECSManager.cs" id="5_ls3ed"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p5l7j"]
@@ -44,6 +45,9 @@ texture = ExtResource("3_gfe5d")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lumperjack"]
 position = Vector2(0, 7)
 shape = SubResource("CircleShape2D_p5l7j")
+
+[node name="Component" type="Node" parent="Lumperjack"]
+script = ExtResource("5_1nfvo")
 
 [node name="TreesManager" type="Node" parent="."]
 script = ExtResource("5_ls3ed")
